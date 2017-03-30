@@ -91,7 +91,8 @@ function dispatcher ( object ) {
 
         if ( listenerArray !== undefined ) {
 
-            event.target = object;
+            if ( event.target === undefined )
+                event.target = object;
 
             length = listenerArray.length;
 
@@ -111,7 +112,8 @@ function dispatcher ( object ) {
 
         if ( oneoffArray !== undefined ) {
 
-            event.target = object;
+            if ( event.target === undefined )
+                event.target = object;
 
             length = oneoffArray.length;
 
