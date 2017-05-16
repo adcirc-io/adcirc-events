@@ -12,13 +12,28 @@
     "type": "git",
     "url": "https://github.com/atdyer/adcirc-events.git"
   },
+  "eslintConfig": {
+    "parserOptions": {
+      "sourceType": "module"
+    },
+    "env": {
+      "browser": true
+    },
+    "extends": "eslint:recommended"
+  },
   "scripts": {
     "dev": "rollup -w --banner \"$(preamble)\" -f umd -n adcirc -o build/adcirc-events.js -- index.js",
-    "prepublish": "rm -rf build && mkdir build && rollup --banner \"$(preamble)\" -f umd -n adcirc -o build/adcirc-events.js -- index.js"
+    "pretest": "rm -rf build && mkdir build && rollup --banner \"$(preamble)\" -f umd -n adcirc -o build/adcirc-events.js -- index.js",
+    "test": "tape 'test/**/*-test.js' && eslint index.js src",
+    "prepublish": "npm run test && uglifyjs --preamble \"$(preamble)\" build/adcirc-events.js -c -m -o build/adcirc-events.min.js",
+    "postpublish": "zip -j build/adcirc-events.zip -- LICENSE README.md build/adcirc-events.js build/adcirc-events.min.js"
   },
   "devDependencies": {
+    "eslint": "^3.19.0",
     "package-preamble": "0.0.2",
     "rollup": "^0.41.4",
-    "rollup-watch": "^3.2.2"
+    "rollup-watch": "^3.2.2",
+    "tape": "^4.6.3",
+    "uglify-js": "^3.0.7"
   }
 }
