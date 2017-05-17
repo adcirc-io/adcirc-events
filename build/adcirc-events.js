@@ -1,4 +1,5 @@
-// https://github.com/adcirc-io/adcirc-events Version 1.0.4. Copyright 2017 Tristan Dyer.
+// https://github.com/adcirc-io/adcirc-events Version 1.0.5. Copyright 2017 Tristan Dyer.
+
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
 	typeof define === 'function' && define.amd ? define(['exports'], factory) :
