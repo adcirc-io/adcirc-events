@@ -5,6 +5,7 @@
   "homepage": "https://github.com/adcirc-io/adcirc-events",
   "main": "build/adcirc-events.js",
   "module": "index",
+  "jsnext:main": "index",
   "author": {
     "name": "Tristan Dyer",
     "url": "https://github.com/atdyer"
