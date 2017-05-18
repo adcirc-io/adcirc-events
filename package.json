@@ -26,7 +26,7 @@
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
-    "uglify": "uglifyjs build/adcirc-events.js -c -m -o build/adcirc-events.min.js",
+    "uglify": "uglifyjs --preamble \"$(preamble)\" build/adcirc-events.js -c -m -o build/adcirc-events.min.js",
     "pretest": "rm -rf build && mkdir build && npm run build",
     "test": "tape 'test/**/*-test.js' && eslint index.js src",
     "prepublish": "npm run test && npm run uglify",
@@ -39,6 +39,6 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-watch": "^3.2.2",
     "tape": "^4.6.3",
-    "uglify-js": "^3.0.7"
+    "uglify-js": "^2.8.11"
   }
 }
