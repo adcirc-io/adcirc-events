@@ -1,6 +1,6 @@
 {
   "name": "adcirc-events",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "license": "BSD-3-Clause",
   "homepage": "https://github.com/adcirc-io/adcirc-events",
   "main": "build/adcirc-events.js",
